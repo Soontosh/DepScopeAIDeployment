@@ -1,7 +1,7 @@
 <div style="text-align: center;">
     <img src="readme-images/logo-light.png" alt="logo" height="70">
 </div>
-DepScope is an AI model which integrates three modalities—text, audio, and video—to classify a person as either depressed or not depressed given a clinical interview recording. This repository contains the code to deploy the model to a locally hosted Django application. More technical details can be found in the [Implementation](#Implementation) section. 
+DepScope is an AI model which integrates three modalities—text, audio, and video—to classify a person as either depressed or not depressed given a clinical interview recording. This repository contains the code to deploy the model to a locally hosted Django application. More technical details can be found in the <a href="#implementation">implementation</a> section. 
 <br></br>
 
 Check out the [demo video](https://youtu.be/oSeqm2-7foY).
@@ -113,7 +113,7 @@ DepScope was integrated into a locally hosted web application for easy and acces
 ##### *Figure: Sample clinical report*
 <img src="readme-images/clinical_report.png" alt="logo" height="300">
 
-Clinicians first connect their Zoom account to the web application and agree to the necessary terms, consenting that their clinical interview recordings may be processed by the DepScope applicatoin. This is done through the Zoom Appli cation Programming Interface (API). From there, any time a clinical interview concludes over Zoom, a webhook is sent to the DepScope backend. The recording is then retrieved from the Zoom servers for preprocessing, model inference, and clinical report generation via GPT-4. Clinical reports contain a summary of the interview, detailing all key points and a justification for why the diagnosis was drawn. Reports additionally contain the confidence of the model in the classification, which is output by the sigmoid activation function. This processing is done asychronously through Celery and Redis. Reports populate the clinician dashboard.
+Clinicians first connect their Zoom account to the web application and agree to the necessary terms, consenting that their clinical interview recordings may be processed by the DepScope application. This is done through the Zoom Application Programming Interface (API). From there, any time a clinical interview concludes over Zoom, a webhook is sent to the DepScope backend. The recording is then retrieved from the Zoom servers for preprocessing, model inference, and clinical report generation via GPT-4. Clinical reports contain a summary of the interview, detailing all key points and a justification for why the diagnosis was drawn. Reports additionally contain the confidence of the model in the classification, which is output by the sigmoid activation function. This processing is done asychronously through Celery and Redis. Reports populate the clinician dashboard.
 
 ### SWE Stack
 <div style="display: flex; align-items: center; height: 100px;">
