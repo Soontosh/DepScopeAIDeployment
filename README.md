@@ -4,7 +4,7 @@
 DepScope is an AI model which integrates three modalities—text, audio, and video—to classify a person as either depressed or not depressed given a clinical interview recording. This repository contains the code to deploy the model to a locally hosted Django application. More technical details can be found in the [Implementation](#Implementation) section. 
 <br></br>
 
-Check out the [demo video](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+Check out the [demo video](https://youtu.be/oSeqm2-7foY).
 
 ## Quickstart
 
