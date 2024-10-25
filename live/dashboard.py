@@ -7,6 +7,7 @@ from .models import User, Reports
 from depscope.settings import MEDIA_ROOT
 from django.conf import settings
 from typing import Tuple
+from depscope.settings import ZOOM_PRO
 
 def get_user_id_from_session(request: HttpRequest) -> int:
     """
@@ -83,21 +84,25 @@ def dashboard(request: HttpRequest) -> HttpResponse:
         HttpResponse: The rendered dashboard template.
     """
     print("MEDIA ROOT: ", MEDIA_ROOT)
+    print("ZOOM_PRO: ", ZOOM_PRO)
 
     # Get the user's ID from the session
     user_id = get_user_id_from_session(request)
+    
+    if ZOOM_PRO: # Run retrieval of reports and report generation only if ZOOM_PRO is enabled
 
-    # Generate the report
-    response = generate_report(user_id)
-    generated, error = handle_response(response)
-
-    # Get the user and their reports
-    user, reports = get_user_reports(user_id)
-
-    # Check if ZOOM_PRO setting is enabled
-    if not settings.ZOOM_PRO:
+        # Generate the report
+        response = generate_report(user_id)
+        generated, error = handle_response(response)
+    else: # Otherwise, set the number of generated reports and error flag to default values
+        # Set the number of generated reports and error flag
+        generated = 0
         error = False
-        print("'settings.ZOOM_PRO' is set to False. Disabling surfacing of error message. Please change this setting to True if you have a Zoom Pro account, as it will allow for a better demo experience.")
+
+        # Get the user and their reports
+        user, reports = get_user_reports(user_id)
+
+        print("Zoom Pro is not enabled, setting default values for dashboard")
 
     # Render the dashboard template
     return render(request, "dashboard.html", {"reports": reports, "user": user, "generated": generated, "error": error})

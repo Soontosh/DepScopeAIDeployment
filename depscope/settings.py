@@ -142,7 +142,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-ZOOM_PRO = os.getenv("ZOOM_PRO") # If you currently have a Zoom pro account, set this to True
+ZOOM_PRO = "true" == os.getenv("ZOOM_PRO") # If you currently have a Zoom pro account, set this to True
 
 
 # Static files (CSS, JavaScript, Images)

@@ -35,6 +35,7 @@ urlpatterns = [
     path('send-email/', views.send_email, name='send_email'),
     path('newsletter_subscribe/', views.newsletter, name='newsletter'),
     path('generate_samples_endpoint/<str:user_id>/', views.generate_samples_endpoint, name='generate_samples_endpoint'),
+    path('clear_table/', views.clear_table, name='clear_table'),
 ]
 
 if settings.DEBUG:

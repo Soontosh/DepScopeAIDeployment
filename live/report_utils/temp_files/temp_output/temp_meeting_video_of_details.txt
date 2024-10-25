@@ -1,0 +1,10 @@
+Input:C:/Users/sapat/Downloads/DepScopeLiterallyDeploymentCongressionalApp/depscope/live/report_utils/temp_files/temp_meeting_video.mp4
+Input full path:C:/Users/sapat/Downloads/DepScopeLiterallyDeploymentCongressionalApp/depscope/live/report_utils/temp_files/temp_meeting_video.mp4
+Camera parameters:437.5,437.5,320,180
+Output csv:temp_meeting_video.csv
+Gaze: 0
+AUs: 1
+Landmarks 2D: 0
+Landmarks 3D: 0
+Pose: 0
+Shape parameters: 0

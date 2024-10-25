@@ -6,3 +6,4 @@ from .landing import live
 from .newsletter import newsletter
 from .gen_samples import generate_samples_endpoint
 from .oauth_redirect import oauth_redirect
+from .clear_table import clear_table

@@ -28,6 +28,7 @@ def generate_report(request: HttpRequest) -> Response:
     Returns:
         Response: A JSON response indicating the number of reports generated.
     """
+
     json_data = json.loads(request.body)  # Extract the therapist ID from the request body
     therapist_id = json_data["therapist_id"]
 
