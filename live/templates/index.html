@@ -1,0 +1,471 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>DepScope - AI-Powered Mental Health Diagnosis</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="{% static 'css/tiny-slider.css' %}"/>
+        <link href="{% static 'css/tobii.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/style.min.css' %}" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="{% static 'images/logo-dark.png' %}" height="40" class="d-block mx-auto" alt="">
+                </div>
+                <div class="sk-chase mt-4">
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <div>
+                    <a class="logo" href="{% url 'live' %}">
+                        <img src="{% static 'images/logo-dark.png' %}" class="l-dark" height="22" alt="">
+                        <img src="{% static 'images/logo-light.png' %}" class="l-light" height="22" alt="">
+                    </a>
+                </div>                
+                <div class="buy-button">
+                    <a href="{% url 'oauth_redirect' %}" class="btn btn-primary">Signup</a>
+                </div>
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+        
+                <div id="navigation">
+                    <ul class="navigation-menu nav-light">
+                        <li><a href="{% url 'contact' %}" class="sub-menu-item">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-home d-flex align-items-center" style="background: url('{% static "images/bg2.png" %}') center center; height: auto;" id="home">
+            <div class="bg-overlay bg-overlay-primary"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 text-center mt-0 mt-md-5 pt-0 pt-md-5">
+                        <div class="title-heading margin-top-100">
+                            <h1 class="heading text-white mb-3">The AI-Powered Psychiatrist's Assistant</h1>
+                            <p class="para-desc mx-auto text-white-50">Streamline your diagnostic process with data-driven analytics using our state-of-the-art AI pipeline—DepScope.</p>
+                            <div class="watch-video mt-4">
+                                <a href="#about" class="btn btn-primary mb-2">Get Started</a>
+                                <!--data-id here-->
+                                <a href="#" data-type="youtube" class="video-play-icon lightbox watch text-light mb-2 ms-2" style="font-size: 16px;"><i class="mdi mdi-play play-icon-circle text-center d-inline-block me-2 rounded-pill text-white position-relative play play-iconbar"></i>Demo Video</a>
+                            </div>
+                        </div>
+
+                        <div class="home-dashboard">
+                            <img src="{% static 'images/DepScopeLaptopImageTransparent.png' %}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="position-relative">
+            <div class="shape overflow-hidden text-light">
+                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </div>
+
+        <section class="section bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center mb-2 pb-2">
+                            <h6 class="text-primary font-weight-normal mb-3">Providers You Trust</hdiv>
+                            <h4 class="title mb-0" style="margin-left: 3%; margin-right: 3%;">State-of-the-Art Technology at Your Fingertips</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- OpenAI -->
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                        <img src="{% static 'images/client/Google-Gray.svg' %}" class="avatar avatar-ex-sm" alt="">
+                    </div>
+
+                    <!-- Meta -->
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                        <img src="{% static 'images/client/Meta-Gray.svg' %}" class="avatar avatar-ex-sm" alt="">
+                    </div>
+                    
+                    <!-- Google -->
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                        <img src="{% static 'images/client/Zoom-Gray.svg' %}" class="avatar avatar-ex-sm" alt="">
+                    </div>
+                    
+                    <!-- Zoom -->
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                        <img src="{% static 'images/client/OpenAI-Gray.svg' %}" class="avatar avatar-ex-sm" alt="">
+                    </div>
+                    
+                    <!-- Nvidia -->
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                        <img src="{% static 'images/client/Nvidia-Gray.svg' %}" class="avatar avatar-ex-sm" alt="">
+                    </div>
+                    
+                    <!-- Intel -->
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                        <img src="{% static 'images/client/Intel-Gray.svg' %}" class="avatar avatar-ex-sm" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section overflow-hidden" id="service">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center mb-4 pb-2">
+                            <h6 class="text-primary font-weight-normal mb-3">Our Pipeline</h6>
+                            <h4 class="title mb-4">How Does it Work?</h4>
+                            <p class="para-desc mx-auto text-muted mb-0">We offer an end-to-end pipeline for automated depression classification. We've designed this as a tool, not a replacement, to assist your diagnoses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="feature position-relative text-center">
+                            <div class="p-4 rounded position-relative overflow-hidden">
+                                <div class="icon text-primary">
+                                    <i class="uim uim-key-skeleton-alt"></i>
+                                    <img src="{% static 'images/shape-1.png' %}" class="avatar avatar-small icon-shape" alt="">
+                                </div>
+                                <div class="content mt-4">
+                                    <h5><a href="javascript:void(0)" class="title text-dark">Create Account</a></h5>
+                                    <p class="text-muted">Connect your DepScope profile to an <em>approved for healthcare</em> Zoom account, and we'll take it from there</p>
+                                    <a href="https://zoom.us/pricing/healthcare" target="_blank" rel="noopener noreferrer" class="text-primary">Learn More <i data-feather="chevron-right" class="fea icon-sm"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="feature position-relative text-center">
+                            <div class="p-4 rounded position-relative overflow-hidden">
+                                <div class="icon text-primary">
+                                    <i class="uim uim-signal-alt-3"></i>
+                                    <img src="{% static 'images/shape-1.png' %}" class="avatar avatar-small icon-shape" alt="">
+                                </div>
+                                <div class="content mt-4">
+                                    <h5><a href="javascript:void(0)" class="title text-dark">Data Analysis</a></h5>
+                                    <p class="text-muted">Any time you conduct a psychiatric interview over Zoom, we'll process the data using our very own ML model</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="feature position-relative text-center">
+                            <div class="p-4 rounded position-relative overflow-hidden">
+                                <div class="icon text-primary">
+                                    <i class="uim uim-flip-v"></i>
+                                    <img src="{% static 'images/shape-1.png' %}" class="avatar avatar-small icon-shape" alt="">
+                                </div>
+                                <div class="content mt-4">
+                                    <h5><a href="javascript:void(0)" class="title text-dark">Show Result</a></h5>
+                                    <p class="text-muted">A clinical report populates your dashboard, consisting of the diagnosis, confidence, and notes from the interview</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-100 mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h6 class="text-primary font-weight-normal mb-3">Features</h6>
+                            <h4 class="title mb-4">What Do We Offer?</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">Launch a TeleHealth business or enhance your existing one with DepScope.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-100 mt-60">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="feature position-relative">
+                            <img src="{% static 'images/PsychiatristWritingPhotoGrayBackground.png' %}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="section-title">
+                            <h5 class="title mb-4">We Built A Tool, <br> Not A Replacement</h5>
+                            <p class="text-muted para-desc">When designing DepScope, we kept psychiatrists' best interests in mind. For an easier user experience, we have incorporated the following features:</p>
+                            <ul class="list-unstyled">
+                                <li class="mt-2"><i data-feather="check-circle" class="fea icon-sm text-primary me-2"></i>Low-Level Explainability</li>
+                                <li class="mt-2"><i data-feather="check-circle" class="fea icon-sm text-primary me-2"></i>Transparency of Model Confidence</li>
+                                <li class="mt-2"><i data-feather="check-circle" class="fea icon-sm text-primary me-2"></i>Actionable Steps</li>
+                            </ul>
+                            <div class="mt-4">
+                                <a href="javascript:void(0)" class="btn btn-primary">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-100 mt-60">
+                <div class="row align-items-center">
+                    <div class="col-md-5 order-1 order-md-2">
+                        <div class="feature position-relative">
+                            <img src="{% static 'images/psychiatristSmiling2Final.png' %}" class="img-fluid d-block mx-auto" alt="" style="width: 210%; height: auto;">
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 order-2 order-md-1 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="section-title">
+                            <h5 class="title mb-4">Easily Integrates With <br> Existing Telehealth Pipelines</h5>
+                            <p class="text-muted para-desc">Simply add DepScope into your existing telehealth pipeline by taking advantage of its modularity.</p>
+                            <ul class="list-unstyled">
+                                <li class="mt-2"><i data-feather="check-circle" class="fea icon-sm text-primary me-2"></i>Zoom for Telehealth Integration</li>
+                                <li class="mt-2"><i data-feather="check-circle" class="fea icon-sm text-primary me-2"></i>HIPAA Compliance</li>
+                            </ul>
+                            <div class="watch-video mt-4">
+                                <a href="https://zoom.us/pricing/healthcare" target="_blank" rel="noopener noreferrer" class="btn btn-primary mb-2 me-2">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light" id="price">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center mb-4 pb-2">
+                            <h4 class="title mb-4">Our Pricing Plans</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">Choose one of three pricing plans depending on your scale and needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="pricing text-center rounded overflow-hidden shadow">
+                            <div class="price-header bg-dark pt-5 pb-5">
+                                <h5 class="price-title text-white">Basic</h5>
+                                <p class="mb-0 text-white-50"> For Individuals & NPOs</p>
+                            </div>
+                            <div class="d-flex justify-content-center bg-light border-bottom py-4">
+                                <span class="h6 mb-0">$</span>
+                                <span class="price h4 mb-0 ms-1">0.00</span>
+                                <span class="h6 align-self-end mb-1">/mo</span>
+                            </div>
+                            <div class="pricing-features text-start">
+                                <ul class="feature list-unstyled py-4 p-3 mb-0">
+                                    <li class="feature-list text-muted"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>Full Pipeline Access</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>Unlimited Clinical Reports</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>Advanced Data Security</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>Active Support</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>Monthly Newsletter</li>
+                                </ul>
+                                <div class="border-top text-center py-4">
+                                    <a href="{% url 'oauth_redirect' %}" class="btn btn-dark">Get Started</a>                                        
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="pricing text-center rounded overflow-hidden shadow-lg bg-light">
+                            <div class="price-header bg-primary pt-5 pb-5">
+                                <h5 class="price-title text-white">Professional</h5>
+                                <p class="mb-0 text-light">For 40 or Less Patients</p>
+                            </div>
+                            <div class="d-flex justify-content-center bg-light border-bottom py-5">
+                                <span class="h6 mb-0">$</span>
+                                <span class="price h4 mb-0 ms-1">24.99</span>
+                                <span class="h6 align-self-end mb-1">/mo</span>
+                            </div>
+                            <div class="pricing-features text-start">
+                                <ul class="feature list-unstyled py-4 p-3 mb-0">
+                                    <li class="feature-list text-muted"><i data-feather="arrow-right-circle" class="fea icon-sm text-primary me-2"></i>All Basic Features</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-primary me-2"></i>Experimental Features</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-primary me-2"></i>Priority Support</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-primary me-2"></i>Free Appointments</li>
+                                </ul>
+                                <div class="border-top text-center py-5">
+                                    <a href="{% url 'contact' %}" class="btn btn-primary">Contact Us</a>                                        
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="pricing text-center rounded overflow-hidden shadow">
+                            <div class="price-header bg-dark pt-5 pb-5">
+                                <h5 class="price-title text-white">Enterprise</h5>
+                                <p class="mb-0 text-white-50"> For Large-Scale Use</p>
+                            </div>
+                            <div class="d-flex justify-content-center bg-light border-bottom py-4">
+                                <span class="h6 mb-0">$</span>
+                                <span class="price h4 mb-0 ms-1">3,000</span>
+                                <span class="h6 align-self-end mb-1">/mo</span>
+                            </div>
+                            <div class="pricing-features text-start">
+                                <ul class="feature list-unstyled py-4 p-3 mb-0">
+                                    <li class="feature-list text-muted"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>Basic Access</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>All Professional Features</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>Feature Requests</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>Highest Priority Support</li>
+                                    <li class="feature-list text-muted mt-2"><i data-feather="arrow-right-circle" class="fea icon-sm text-dark me-2"></i>Monthly Check-Ins</li>
+                                </ul>
+                                <div class="border-top text-center py-4">
+                                    <a href="{% url 'contact' %}" class="btn btn-dark">Contact Us</a>                                        
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-100 mt-60">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="faq-container">
+                            <h6 class="question"><i data-feather="help-circle" class="fea icon-ex-md text-primary me-2"></i> Is my client's data safe with <span class="text-primary">DepScope</span>?</h6>
+                            <p class="answer text-muted mt-3 mb-0">Your patient's data is 100% safe with us. We use industry standard encryption and wipe sensitive data from our servers after processing, following all HIPAA guidelines</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="faq-container">
+                            <h6 class="question"><i data-feather="help-circle" class="fea icon-ex-md text-primary me-2"></i> How accurate is <span class="text-primary">DepScope</span> in diagnosing conditions?</h6>
+                            <p class="answer text-muted mt-3 mb-0">DepScope achieves an accuracy of 91% for depression diagnosis, far outperforming psychiatric gold standards and similar AI models. We are working to extend the architecture to other disorders.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-12 mt-4 pt-2">
+                        <div class="faq-container">
+                            <h6 class="question"><i data-feather="help-circle" class="fea icon-ex-md text-primary me-2"></i> Why choose <span class="text-primary">DepScope</span>?</h6>
+                            <p class="answer text-muted mt-3 mb-0">DepScope has been trained on real clinical interviews and rigorously tested using gold standard AI evaluation techniques.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-12 mt-4 pt-2">
+                        <div class="faq-container">
+                            <h6 class="question"><i data-feather="help-circle" class="fea icon-ex-md text-primary me-2"></i> Is <span class="text-primary">DepScope</span> really free for individuals?</h6>
+                            <p class="answer text-muted mt-3 mb-0">Yes, our goal is to help you, not make money. We fund DepScope's computational expenses out of our own pockets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-md-5 pt-md-3 mt-4 pt-2 justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title">
+                            <h4 class="title mb-4">Have a Question? Reach Out!</h4>
+                            <p class="text-muted para-desc mx-auto">We are more than happy to answer all your questions.</p>
+                            <a href="{% url 'contact' %}" class="btn btn-primary mt-4 scroll-down">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="position-relative">
+            <div class="shape overflow-hidden text-white">
+                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </div>
+
+        <section class="section" style="padding-top:40px;padding-bottom: 40px;">
+            <div class="container mt-30" id="subscribe">
+                <div class="py-5 px-4 bg-primary rounded-pill" style="background: url('images/map.png') center center;">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="section-title text-center mb-4 pb-2">
+                                <h4 class="title text-white mb-4">Subscribe to our Newsletter</h4>
+                                <p class="text-white-50 mx-auto para-desc mb-0">Launch your campaign and benefit from our expertise on designing and managing conversion centered bootstrap4 html page.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div class="text-center subcribe-form mt-4 pt-2">
+                                <form id="subscribe-form">
+                                    <div class="form-group mb-0">
+                                        <input type="email" id="email" name="email" class="rounded-pill" placeholder="Your Email Id" required>
+                                        <button type="submit" class="btn btn-pills btn-success">Subscribe Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-dark py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 mb-0">
+                        <div class="text-center">
+                            <a class="logo logo-footer" href="/">
+                                <img src="{% static 'images/logo-light.png' %}" height="25" alt="">
+                            </a>
+                            
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <p class="mb-0 footer-text para-desc mx-auto">© <script>document.write(new Date().getFullYear())</script> <span class="text-reset">DepScope</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="watchvideomodal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content video-modal rounded overflow-hidden">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/jNTZpfXYJa4?rel=0" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'js/newsletter.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/feather.min.js' %}"></script>
+        <script src="https://unicons.iconscout.com/release/v3.0.6/script/monochrome/bundle.js"></script>
+        <script src="{% static 'js/tiny-slider.js' %}"></script>
+        <script src="{% static 'js/tiny-slider-init.js' %}"></script>
+        <script src="{% static 'js/tobii.min.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+    </body>
+</html>

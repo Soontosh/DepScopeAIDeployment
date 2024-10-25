@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<meta charset="UTF-8" />
+
+<link rel="shortcut icon" type="image/png" href="https://datapane-cdn.com/static/v1/datapane-icon-192x192.png"/>
+<link rel="shortcut icon" sizes="192x192" href="https://datapane-cdn.com/static/v1/datapane-icon-192x192.png"/>
+<link rel="apple-touch-icon" href="https://datapane-cdn.com/static/v1/datapane-icon-192x192.png"/>
+
+<script src="https://kit.fontawesome.com/256c714d9a.js"></script>
+<link
+  href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700|Inconsolata|Karla|Rubik&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://datapane-cdn.com/v0.17.0/report/index.css" />
+<link rel="stylesheet" href="https://datapane-cdn.com/v0.17.0/report/tailwind.css" />
+<script>
+  // analytics config
+  // TODO -- pass these in as props for consistency?
+  window.dpAppRunner = false;
+  window.dpLocal = true;
+
+  /* construct the view */
+  const htmlHeader = `<style type="text/css">:root {
+    --dp-accent-color: #4E46E5;
+    --dp-bg-color: #FFF;
+    --dp-text-align: left;
+    --dp-font-family: Inter, ui-sans-serif, system-ui;
+}</style>`;
+  window.reportProps = { htmlHeader, isLightProse: false, isOrg: false, mode: "VIEW", reportWidthClass: "max-w-screen-xl" };
+
+  if (!window.dpAppRunner) {
+      // pass app data via props if in local (static) mode, otherwise this data is fetched from the server
+      window.reportProps["appData"] = { data: { result: {"view_xml": "\u003cView version=\"1\" fragment=\"false\"\u003e\u003cHTML\u003e\u003c![CDATA[\u003cstyle\u003e\n    @import url(\u0027https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700\u0026display=swap\u0027);\n    h1 {\n        font-family: \u0027Inter\u0027, sans-serif;\n        font-weight: 700;\n        font-size: 2.5em;\n        line-height: 1.2;\n        color: #000;\n        text-align: center;\n        margin: 0;\n        padding: 0;\n    }\n    h2 {\n        font-family: \u0027Inter\u0027, sans-serif;\n        font-weight: 700;\n        text-align: center;\n        margin: 0;\n        margin-top: 0.3em;\n    }\n    .bg-white.relative.z-40 {\n        height: 5px;\n    }\n\u003c/style\u003e\n\u003ch1 style=\"padding: 0; margin: 0;\"\u003eZexuan S. Yang Clinical Interview Report\u003c/h1\u003e\n\u003ch2\u003e1/27/2024\u003c/h2\u003e\n\u003cp style=\"text-align: center; max-width: 700px; margin:auto; margin-top: 1em; margin-bottom: 0.1em;\"\u003eThe patient, originally from the Greater Los Angeles area, appreciates the diversity and entertainment options in the city but dislikes the fickle weather, traffic, and litter. They have traveled domestically but not internationally, enjoying experiencing different cultures. Their recent trip to San Diego triggered memories of childhood vacations to Baja and Rosarito Beach during Easter.\n\nWith a bachelor\u0027s degree in communication studies, the patient desires to own their own business, possibly in telecommunications or natural soy candle making. They describe themselves as a mixture of shy and outgoing, adjusting their demeanor based on social situations.\n\nTo relax, the patient listens to meditation tapes, takes walks, or gets massages. They admit to fair control over their temper and frequently argue over communication issues. Reflecting on past decisions, they regret pursuing legal action instead of accepting a settlement offer from a mechanic.\n\nEmotionally, the patient struggled with letting go of a past relationship, and they seek therapy in the past for issues related to PTSD and depression. However, they have stopped therapy due to financial constraints and dissatisfaction with counselors.\n\nDespite recent stress, the patient feels generally well but acknowledges a need for coping mechanisms. They express pride in their independence, education, and self-sufficiency. Looking back, they wish they had focused more on their studies and less on socializing.\n\nOverall, the patient presents as resilient but struggles with past trauma and current stressors, suggesting a need for continued support and coping strategies.\u003c/p\u003e]]\u003e\u003c/HTML\u003e\u003cGroup columns=\"2\" valign=\"top\"\u003e\u003cBigNumber heading=\"Audio-Visual-Textual Confidience\" value=\"93.5%\" is_positive_intent=\"false\" is_upward_change=\"false\"/\u003e\u003cBigNumber heading=\"Textual Confidence\" value=\"100%\" is_positive_intent=\"false\" is_upward_change=\"false\"/\u003e\u003c/Group\u003e\u003cBigNumber heading=\"Diagnosis\" value=\"Not Depressed\" is_positive_intent=\"false\" is_upward_change=\"false\"/\u003e\u003c/View\u003e", "assets": {}} }};
+  }
+</script>
+<script type="module">
+  import { mountReport } from "https://datapane-cdn.com/v0.17.0/report/index.es.js";
+  mountReport(window.reportProps);
+</script>
+  </head>
+  <body>
+      <div id="report"></div>
+  </body>
+</html>

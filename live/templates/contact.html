@@ -1,0 +1,212 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>DepScope - App & Saas Landing Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/style.min.css' %}" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="{% static 'images/logo-dark.png' %}" height="40" class="d-block mx-auto" alt="">
+                </div>
+                <div class="sk-chase mt-4">
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <div>
+                    <a class="logo" href="{% url 'live' %}">
+                        <img src="{% static 'images/logo-dark.png' %}" height="22" alt="">
+                    </a>
+                </div>                 
+                <div class="buy-button">
+                    <a href="{% url 'oauth_redirect' %}" class="btn btn-primary">Signup</a>
+                </div>
+                
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+        
+                <div id="navigation">
+                    <ul class="navigation-menu">
+                        <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        
+        <section class="bg-half bg-light d-table w-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 text-center">
+                        <div class="title-heading">
+                            <h4>Get In Touch !</h4>
+                            <p class="text-muted para-desc mx-auto mt-3 mb-0">Hello, Contact now it's free.</p> 
+                            <nav aria-label="breadcrumb" class="d-inline-block mt-4">
+                                <ul class="breadcrumb mb-0">
+                                    <li class="breadcrumb-item"><a href="{% url 'live' %}">DepScope</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="home-shape-arrow">
+                        <a href="#contact" class="scroll-down"><i class="mdi mdi-arrow-down arrow-icon bg-light text-dark h5"></i></a>
+                    </div>
+                </div>
+            </div> 
+        </section>
+
+        <section class="section pb-0" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="contact-detail d-flex align-items-center">
+                            <div class="contact-icon rounded-circle bg-primary text-center">
+                                <i data-feather="phone" class="fea icon-md-md text-white"></i>
+                            </div>
+                            <div class="content ms-3">
+                                <h5 class="title mb-0">Phone</h5>
+                                <a href="tel:+152534-468-854" class="text-primary">+1 (945)-267-0083</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="contact-detail d-flex align-items-center">
+                            <div class="contact-icon rounded-circle bg-primary text-center">
+                                <i data-feather="mail" class="fea icon-md-md text-white"></i>
+                            </div>
+                            <div class="content ms-3">
+                                <h5 class="title mb-0">Email</h5>
+                                <a href="mailto:{% static 'STAFF_EMAIL' %}" class="text-primary">{% static 'STAFF_EMAIL' %}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                        <div class="contact-detail d-flex align-items-center">
+                            <div class="contact-icon rounded-circle bg-primary text-center">
+                                <i data-feather="map-pin" class="fea icon-md-md text-white"></i>
+                            </div>
+                            <div class="content ms-3">
+                                <h5 class="title mb-0">Map</h5>
+                                <!-- Example Link (on the real website, there will be the real website, but we are just using a placeholder here to prevent doxxing)-->
+                                <a href="https://maps.app.goo.gl/3rZm7aavYAgbBhx96" target="_blank" rel="noopener noreferrer" class="video-play-icon text-primary">View on Google map</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-md-1 order-2 mt-md-5 mt-4 pt-2">
+                        <div class="me-lg-5">
+                            <img src="{% static 'images/svg/revenue-graph-colour.svg' %}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 order-md-2 order-1 mt-md-5 mt-4 pt-2">
+                        <div class="custom-form mt-3 p-4 shadow rounded">
+                            <form method="post" name="myForm" onsubmit="return validateForm()">
+                                <p id="error-msg"></p>
+                                <div id="simple-msg"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Name <span class="text-danger">*</span></label>
+                                            <input name="name" id="name" type="text" class="form-control" placeholder="Name:">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Email <span class="text-danger">*</span></label>
+                                            <input name="email" id="email" type="email" class="form-control" placeholder="Email:">
+                                        </div> 
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Subject</label>
+                                            <input name="subject" id="subject" class="form-control" placeholder="Subject:">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Comments <span class="text-danger">*</span></label>
+                                            <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Message:"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-grid">
+                                            <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid px-0 mt-100 mt-60">
+            </div>
+        </section>
+
+         <footer class="bg-dark py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 mb-0">
+                        <div class="text-center">
+                            <a class="logo logo-footer" href="#">
+                                <img src="{% static 'images/logo-light.png' %}" height="25" alt="">
+                            </a>
+                            
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <p class="mb-0 footer-text para-desc mx-auto">© <script>document.write(new Date().getFullYear())</script> <span class="text-reset">DepScope</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/feather.min.js' %}"></script>
+        <script src="{% static 'https://unicons.iconscout.com/release/v3.0.6/script/monochrome/bundle.js' %}"></script>
+        <script src="{% static 'js/contact.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+    </body>
+</html>

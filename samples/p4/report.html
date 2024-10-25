@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<meta charset="UTF-8" />
+
+<link rel="shortcut icon" type="image/png" href="https://datapane-cdn.com/static/v1/datapane-icon-192x192.png"/>
+<link rel="shortcut icon" sizes="192x192" href="https://datapane-cdn.com/static/v1/datapane-icon-192x192.png"/>
+<link rel="apple-touch-icon" href="https://datapane-cdn.com/static/v1/datapane-icon-192x192.png"/>
+
+<script src="https://kit.fontawesome.com/256c714d9a.js"></script>
+<link
+  href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700|Inconsolata|Karla|Rubik&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://datapane-cdn.com/v0.17.0/report/index.css" />
+<link rel="stylesheet" href="https://datapane-cdn.com/v0.17.0/report/tailwind.css" />
+<script>
+  // analytics config
+  // TODO -- pass these in as props for consistency?
+  window.dpAppRunner = false;
+  window.dpLocal = true;
+
+  /* construct the view */
+  const htmlHeader = `<style type="text/css">:root {
+    --dp-accent-color: #4E46E5;
+    --dp-bg-color: #FFF;
+    --dp-text-align: left;
+    --dp-font-family: Inter, ui-sans-serif, system-ui;
+}</style>`;
+  window.reportProps = { htmlHeader, isLightProse: false, isOrg: false, mode: "VIEW", reportWidthClass: "max-w-screen-xl" };
+
+  if (!window.dpAppRunner) {
+      // pass app data via props if in local (static) mode, otherwise this data is fetched from the server
+      window.reportProps["appData"] = { data: { result: {"view_xml": "\u003cView version=\"1\" fragment=\"false\"\u003e\u003cHTML\u003e\u003c![CDATA[\u003cstyle\u003e\n    @import url(\u0027https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700\u0026display=swap\u0027);\n    h1 {\n        font-family: \u0027Inter\u0027, sans-serif;\n        font-weight: 700;\n        font-size: 2.5em;\n        line-height: 1.2;\n        color: #000;\n        text-align: center;\n        margin: 0;\n        padding: 0;\n    }\n    h2 {\n        font-family: \u0027Inter\u0027, sans-serif;\n        font-weight: 700;\n        text-align: center;\n        margin: 0;\n        margin-top: 0.3em;\n    }\n    .bg-white.relative.z-40 {\n        height: 5px;\n    }\n\u003c/style\u003e\n\u003ch1 style=\"padding: 0; margin: 0;\"\u003eAlex Dotty Clinical Interview Report\u003c/h1\u003e\n\u003ch2\u003e1/27/2024\u003c/h2\u003e\n\u003cp style=\"text-align: center; max-width: 700px; margin:auto; margin-top: 1em; margin-bottom: 0.1em;\"\u003eThe patient, a 40-year-old female, presented for therapy session reporting feeling quite well and hailing originally from Ohio before relocating to Los Angeles after completing her education. She mentioned not frequently visiting her hometown due to her parents\u0027 passing and expressed appreciation for the warm climate and diverse culture of LA.\n\nShe described herself as outgoing and an avid traveler, particularly enjoying exploring different cultures and finding commonalities among people. Notably, she shared memorable experiences from her travels, including witnessing a baby in a mosque during a trip to Egypt. \n\nRegarding relaxation, the patient discussed starting her day with meditation and engaging in spiritual practices, emphasizing the importance of exercise for maintaining balance.\n\nThe patient claimed to have good control over her temper and couldn\u0027t recall the last time she argued with someone. She emphasized a philosophy of learning from experiences rather than dwelling on regrets or wishing things were different.\n\nMood-wise, the patient reported feeling great, attributing it to her spiritual practices. She denied any recent changes in behavior or thoughts, asserting stability in mental well-being. Furthermore, she denied a history of PTSD or depression.\n\nIn terms of sleep, the patient reported no difficulty falling asleep and feeling well-rested upon waking. She expressed contentment with her life and self-perception, stating she has no desire for personal change.\n\nOverall, the patient presents as emotionally stable, resilient, and content with her life circumstances, employing spiritual practices and a positive outlook to maintain well-being. Continued monitoring of her mental health and exploration of coping strategies may be beneficial in supporting her overall wellness.\u003c/p\u003e]]\u003e\u003c/HTML\u003e\u003cGroup columns=\"2\" valign=\"top\"\u003e\u003cBigNumber heading=\"Audio-Visual-Textual Confidience\" value=\"93.5%\" is_positive_intent=\"false\" is_upward_change=\"false\"/\u003e\u003cBigNumber heading=\"Textual Confidence\" value=\"100%\" is_positive_intent=\"false\" is_upward_change=\"false\"/\u003e\u003c/Group\u003e\u003cBigNumber heading=\"Diagnosis\" value=\"Not Depressed\" is_positive_intent=\"false\" is_upward_change=\"false\"/\u003e\u003c/View\u003e", "assets": {}} }};
+  }
+</script>
+<script type="module">
+  import { mountReport } from "https://datapane-cdn.com/v0.17.0/report/index.es.js";
+  mountReport(window.reportProps);
+</script>
+  </head>
+  <body>
+      <div id="report"></div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+//
+// footer.scss
+//
+footer {
+    position: relative;
+    padding: 50px 0;
+    .logo-footer {
+        font-size: 28px;
+    }
+    &.footer-bar {
+        padding: 30px 0;
+        border-top: 1px solid $gray-700;
+    }
+    .footer-text {
+        color: $gray-500;
+        transition: all 0.5s ease;
+    }
+}

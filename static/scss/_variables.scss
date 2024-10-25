@@ -1,0 +1,82 @@
+//
+// variables.scss
+//
+
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;500;600;700&display=swap');
+
+
+// Color
+$white:                     #ffffff;
+
+$primary:                   #0666db;
+$secondary:                 #727981;
+$success:                   #56b35f;
+$warning:                   #f1a445;
+$info:                      #59a5d8;
+$danger:                    #e73636;
+$dark:                      #3c4858;
+$black:                     #161c2d;
+$muted:                     #8492a6;
+$light:                     #f9fafc;
+$violet:                    #9B287B;
+
+// Gray
+$gray-100:                  #f8f9fa;
+$gray-200:                  #e9ecef;
+$gray-300:                  #dee2e6;
+$gray-400:                  #ced4da;
+$gray-500:                  #adb5bd;
+$gray-600:                  #6c757d; 
+$gray-700:                  #495057;
+
+//Custom
+$footer:                    lighten($dark, 5%);
+
+// Overlay
+$overlay:                   rgba($dark, 0.7);
+$bg-overlay-white:          rgba($white, 0.7);
+$bg-overlay-primary:           rgba($primary, 0.65);
+
+// Body Background
+$shadow:                    0 0 3px rgba($black,.15);
+$shadow-lg:                 0 10px 25px rgba($dark, 0.15);
+
+// Base font
+$font-size-base:            16px;
+$menu-font-size:            14px;
+$logo-font-size:            22px;
+
+$font-family-base:          'Muli', sans-serif;
+$font-family-secondary:     'Muli', sans-serif;
+
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "warning": $warning,
+    "info": $info,
+    "danger": $danger,
+    "dark": $dark,
+    "muted": $muted,
+    "light": $light,
+    "footer": $footer,
+);
+
+$heading-font-sizes: (
+    "h1": 42px,
+    "h2": 36px,
+    "h3": 30px,
+    "h4": 24px,
+    "h5": 20px,
+    "h6": 16px,
+);
+
+$display-font-sizes: (
+    "display-1": 80px,
+    "display-2": 72px,
+    "display-3": 64px,
+    "display-4": 56px,
+)
+
+
+

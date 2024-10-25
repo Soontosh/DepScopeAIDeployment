@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<meta charset="UTF-8" />
+
+<link rel="shortcut icon" type="image/png" href="https://datapane-cdn.com/static/v1/datapane-icon-192x192.png"/>
+<link rel="shortcut icon" sizes="192x192" href="https://datapane-cdn.com/static/v1/datapane-icon-192x192.png"/>
+<link rel="apple-touch-icon" href="https://datapane-cdn.com/static/v1/datapane-icon-192x192.png"/>
+
+<script src="https://kit.fontawesome.com/256c714d9a.js"></script>
+<link
+  href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700|Inconsolata|Karla|Rubik&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://datapane-cdn.com/v0.17.0/report/index.css" />
+<link rel="stylesheet" href="https://datapane-cdn.com/v0.17.0/report/tailwind.css" />
+<script>
+  // analytics config
+  // TODO -- pass these in as props for consistency?
+  window.dpAppRunner = false;
+  window.dpLocal = true;
+
+  /* construct the view */
+  const htmlHeader = `<style type="text/css">:root {
+    --dp-accent-color: #4E46E5;
+    --dp-bg-color: #FFF;
+    --dp-text-align: left;
+    --dp-font-family: Inter, ui-sans-serif, system-ui;
+}</style>`;
+  window.reportProps = { htmlHeader, isLightProse: false, isOrg: false, mode: "VIEW", reportWidthClass: "max-w-screen-xl" };
+
+  if (!window.dpAppRunner) {
+      // pass app data via props if in local (static) mode, otherwise this data is fetched from the server
+      window.reportProps["appData"] = { data: { result: {"view_xml": "\u003cView version=\"1\" fragment=\"false\"\u003e\u003cHTML\u003e\u003c![CDATA[\u003cstyle\u003e\n    @import url(\u0027https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700\u0026display=swap\u0027);\n    h1 {\n        font-family: \u0027Inter\u0027, sans-serif;\n        font-weight: 700;\n        font-size: 2.5em;\n        line-height: 1.2;\n        color: #000;\n        text-align: center;\n        margin: 0;\n        padding: 0;\n    }\n    h2 {\n        font-family: \u0027Inter\u0027, sans-serif;\n        font-weight: 700;\n        text-align: center;\n        margin: 0;\n        margin-top: 0.3em;\n    }\n    .bg-white.relative.z-40 {\n        height: 5px;\n    }\n\u003c/style\u003e\n\u003ch1 style=\"padding: 0; margin: 0;\"\u003eVamsi Doti Clinical Interview Report\u003c/h1\u003e\n\u003ch2\u003e1/27/2024\u003c/h2\u003e\n\u003cp style=\"text-align: center; max-width: 700px; margin:auto; margin-top: 1em; margin-bottom: 0.1em;\"\u003eThe patient is originally from El Segundo and currently resides in LA. They enjoy the beach but dislike the smog. The patient has traveled to Palm Springs recently and highlighted the experience of barbecuing by the pool. The most memorable experience was graduating from college, being the first in the family to do so, with a major in advertising communications and public relations. The patient currently works in advertising and aspires to work for a big golf company. They described themselves as outgoing and mentioned using outdoor activities like running and surfing to relax. The patient has a close relationship with their family, particularly with their hardworking father who serves as a positive influence. Sleep is a struggle due to past insomnia. The patient is feeling generally happy, but experiences occasional mood fluctuations possibly related to their wife\u0027s pregnancy. They denied a diagnosis of PTSD or depression. The patient expressed a lack of regrets and emphasized the importance of forward movement. In terms of personal growth, they mentioned a desire for more confidence. Overall, the patient is proud of their upbringing, family, and work ethic, aiming for future success in their advertising career.\u003c/p\u003e]]\u003e\u003c/HTML\u003e\u003cGroup columns=\"2\" valign=\"top\"\u003e\u003cBigNumber heading=\"Audio-Visual-Textual Confidience\" value=\"93.5%\" is_positive_intent=\"false\" is_upward_change=\"false\"/\u003e\u003cBigNumber heading=\"Textual Confidence\" value=\"100%\" is_positive_intent=\"false\" is_upward_change=\"false\"/\u003e\u003c/Group\u003e\u003cBigNumber heading=\"Diagnosis\" value=\"Not Depressed\" is_positive_intent=\"false\" is_upward_change=\"false\"/\u003e\u003c/View\u003e", "assets": {}} }};
+  }
+</script>
+<script type="module">
+  import { mountReport } from "https://datapane-cdn.com/v0.17.0/report/index.es.js";
+  mountReport(window.reportProps);
+</script>
+  </head>
+  <body>
+      <div id="report"></div>
+  </body>
+</html>
