@@ -6,6 +6,8 @@ DepScope is an AI model which integrates three modalities—text, audio, and vid
 
 Check out the [demo video](https://youtu.be/oSeqm2-7foY).
 
+You can find a live demo of the front-end [here](https://depscope.up.railway.app/). Please note that I have disabled Sign Up functionality on this live demo. Since DepScope relies on the Zoom API to create accounts, the app needs to be approved by the Zoom marketplace before it can be publicly used and connected to. I will update the live demo once my app is approved by the Zoom team, but for now, the only way to access the full functionality is through local hosting.
+
 ## Quickstart
 
 ### Prerequisites
