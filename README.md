@@ -4,7 +4,7 @@
 DepScope is an AI model which integrates three modalities—text, audio, and video—to classify a person as either depressed or not depressed given a clinical interview recording. This repository contains the code to deploy the model to a locally hosted Django application. More technical details can be found in the <a href="#implementation">implementation</a> section. 
 <br></br>
 
-You can find a live demo of the front-end [here](https://depscope.up.railway.app/). Please note that I have disabled Sign Up functionality on this live demo. Since DepScope relies on the Zoom API to create accounts, the app needs to be approved by the Zoom marketplace before it can be publicly used and connected to. I will update the live demo once my app is approved by the Zoom team, but for now, the only way to access the full functionality is through local hosting.
+You can find a live demo of the front-end [here](https://depscope.up.railway.app/). Please note that I have disabled Sign Up functionality on this live demo. Since DepScope relies on the Zoom API to create accounts, the app needs to be approved by the Zoom marketplace before it can be publicly used and connected to. I will update the live demo once my app is approved by the Zoom team, but for now, the only way to access the full functionality is through local hosting. Additionally, to access the YouTube video embed, you must ensure your browser is not on safe mode.
 
 Check out the [demo video](https://youtu.be/oSeqm2-7foY).
 
